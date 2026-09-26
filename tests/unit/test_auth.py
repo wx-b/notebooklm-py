@@ -1062,9 +1062,9 @@ class TestExtractCookiesRegionalDomains:
             results.add(cookies["SID"])
 
         # All permutations should produce the same result: .google.com wins
-        assert results == {"sid_base"}, (
-            f"Extraction should be deterministic, but got different results: {results}"
-        )
+        assert results == {
+            "sid_base"
+        }, f"Extraction should be deterministic, but got different results: {results}"
 
     def test_regional_only_uses_first_encountered(self):
         """Test behavior when only regional domains exist (no .google.com).
